@@ -1,0 +1,28 @@
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+h1 {
+	text-align: center;
+}
+
+.contain {
+	display: flex;
+	flex-direction: column;
+}
+
+input,
+textarea {
+	width: 60%;
+	margin: 0.5rem auto;
+	padding: 0.5rem;
+	font-size: 1rem;
+}
+
+.btn {
+	margin: auto;
+	padding: 1rem;
+	font-size: 1rem;
+	cursor:pointer;
+}

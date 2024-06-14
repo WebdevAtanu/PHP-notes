@@ -1,0 +1,294 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Playfair Display', serif;
+}
+
+/*header.php*/
+.logo {
+  color: white;
+  font-size: 2rem;
+  text-decoration: none;
+
+  &::first-letter {
+    color: red;
+  }
+
+}
+
+.navs {
+  color: white;
+  text-decoration: none;
+  margin-left: 0.5rem;
+  padding: 0.3rem;
+  transition: all 0.3s;
+}
+
+.navbar-nav a:hover {
+  background-color: #ff6000;
+}
+
+/*section headings*/
+h2 {
+  text-align: center;
+  background-color: #5022c3;
+  padding: 1rem;
+  margin-top: 0.5rem;
+  font-weight: bold;
+  color: white;
+}
+
+/*intro.php*/
+#back {
+  background: url("../image/back.jpg");
+  background-size: 100%;
+  background-position: top;
+  background-repeat: no-repeat;
+}
+
+.intro {
+  box-shadow: 0px 0px 5px 0px #00000063;
+  padding: 1.5rem;
+  width: 40%;
+  color: white;
+}
+
+#introFoot {
+  background-color: #e3e2e25e;
+  padding: 1.5rem;
+}
+
+#introFoot ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  padding: 0.5rem;
+}
+
+#introFoot ul li {
+  font-size: x-large;
+}
+
+/*course.php*/
+#buttonList {
+  list-style: none;
+  display: flex;
+
+  button {
+    border: none;
+    background: none;
+    margin-left: 1rem;
+
+    &:hover {
+      color: blue;
+    }
+
+  }
+
+}
+
+#cover {
+  border: 1px solid #8080809e;
+  margin: 1rem;
+  padding: 1rem;
+}
+
+#Chead,
+#Cpara {
+  text-align: center;
+}
+
+.courseCard {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.card {
+  margin-top: 0.5rem;
+  width: 18rem;
+
+  & img {
+    aspect-ratio: 1 / 0.7;
+  }
+
+  & p {
+    margin-bottom: 0;
+  }
+
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.card-title {
+  font-weight: bold;
+}
+
+.card:hover {
+  box-shadow: 0px 0px 5px 0px #80808073;
+}
+
+/*about.php*/
+#about {
+  display: flex;
+  padding: 0.5rem;
+  justify-content: space-around;
+}
+
+#about img {
+  height: 100%;
+  width: 100%;
+}
+
+.aboutContent {
+  width: 40%;
+  padding: 1.5rem;
+}
+
+/*instruct.php*/
+#instruct {
+  height: 100%;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+#instruct img {
+  width: 100%;
+}
+
+#instructPara {
+  width: 100%;
+}
+
+#instruct button {
+  padding: 0.5rem;
+  background: black;
+  color: white;
+}
+
+/*contact.php*/
+#cDisplay {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 2rem;
+}
+
+#cForm {
+  width: 40vw;
+}
+
+#cAdd {
+  margin: 3rem auto;
+  border: 1px solid;
+  height: 100%;
+  padding: 2rem;
+  box-shadow: 0px 10px 0px 3px #808080cc;
+  border-radius: 1rem;
+  color: black;
+}
+
+/*feedback carousel*/
+#outerDiv {
+  display: flex;
+  justify-content: space-around;
+}
+
+.innerDiv {
+  width: 45%;
+  aspect-ratio: 1/0.4;
+  padding: 1rem;
+  box-sizing: border-box;
+  border: 1px solid #0000002b;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#carouselDiv img {
+  width: 15%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+}
+
+.userInfo {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  .userName {
+    margin-left: 1rem;
+  }
+
+}
+
+.customBtn {
+  background: #5022c3;
+  width: 3%;
+  height: 6vh;
+  top: 100%;
+  margin-top: 1rem;
+  border-radius: 50%;
+}
+
+.carousel-control-next {
+  right: 47%;
+}
+
+.carousel-control-prev {
+  left: 47%;
+}
+
+/*footer.php*/
+#footer {
+  margin-top: 10rem;
+}
+
+#social {
+  display: flex;
+  list-style: none;
+  justify-content: space-around;
+  background-color: black;
+  padding: 0.5rem;
+  margin-bottom: 0;
+}
+
+#social li a {
+  text-decoration: none;
+  color: white;
+}
+
+#footFlex {
+  display: flex;
+  justify-content: space-around;
+  padding: 2rem;
+  background-color: #8080801c;
+}
+
+.content {
+  width: 30%;
+  border-right: 0.1px solid #8080808c;
+}
+
+.content p {
+  font-size: smaller;
+  margin-bottom: 0;
+}
+
+#copyRight {
+  margin: 0;
+  background-color: black;
+  text-align: center;
+  color: white;
+  font-family: auto;
+}
