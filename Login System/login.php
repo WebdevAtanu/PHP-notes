@@ -1,12 +1,11 @@
 <?php
-$alert=false;//it will holding the alert message
 $error=false;//it will holding the alert message
 if($_SERVER["REQUEST_METHOD"]=="POST")
 {
 include "components/connection.php";
-$username=$_POST["user"];
+$email=$_POST["email"];
 $password=$_POST["password"];
-$sqlquery="select * from logindata where username='$username'AND password='$password'";
+$sqlquery="select * from logindata where email='$email'AND password='$password'";
 $result=mysqli_query($conn,$sqlquery);
 $num=mysqli_num_rows($result);
 if($num==1){
@@ -29,44 +28,22 @@ $error=true;
 		<title>Login</title>
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 		<link rel="stylesheet" href="style.css">
-		<style>
-			body{
-				background: url("images/spiderman.jpeg");
-				background-size: 100%;
-				background-attachment: fixed;
-				}
-			.container{
-				padding: 20px;
-				backdrop-filter: brightness(0.3);
-				color: white;
-				}
-		</style>
 	</head>
 	<body>
-		
 		<?php require"components/navbar.php"?>
-		<?php
-				if($alert){
-					echo'
-				<div class="alert alert-success alert-dismissible fade show" role="alert">
-								<strong>Success!</strong> You are logged in.
-								<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-				</div>';};
-		?>
 		<?php
 		if($error){
 			echo'
-		<div class="alert alert-danger alert-dismissible fade show" role="alert">
-						<strong>Oops!</strong> You entered an invalid username and password. Try again with correct credentials.
-						<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-		</div>';};
+			<div class="alert alert-danger alert-dismissible fade show" role="alert">Invalid credentials.
+				<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+			</div>';};
 		?>
-		<div class="container my-5" style="width:30vw;">
+		<div class="container my-5"">
 			<h1 class="text-center">Login</h1>
 			<form action="login.php" method="post">
 				<div class="mb-3">
-					<label for="user" class="form-label">Username</label>
-					<input type="text" class="form-control" id="user" placeholder="Enter Username" name="user" required>
+					<label for="email" class="form-label">E-mail</label>
+					<input type="email" class="form-control" id="email" placeholder="Enter Username" name="email" required>
 				</div>
 				<div class="mb-3">
 					<label for="password" class="form-label">Password</label>

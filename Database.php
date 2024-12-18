@@ -1,91 +1,92 @@
 <?php 
-// Database connection
+// ===================================Database connection===================================
 $servername="localhost";
 $username="root";
 $password="";
-$database="phpDB";
+$database="phpdb";
 $conn=mysqli_connect($servername,$username,$password,$database);
 if(!$conn){
 die("Sorry failed to connect: ".mysqli_connect_error());
 }
 else{
-	echo("Connection successful<br>");
+	echo("Connection successful <br>");
 }
 
-
-// Create a new db
-$sql="create database phpDB";
-$db=mysqli_query($conn,$sql);
+// ===================================Create a new db===================================
+$query="create database phpdb";
+$db=mysqli_query($conn,$query);
 if($db){
-echo("DB creation successful");
+echo("DB creation successful <br>");
 }
 else{
-	echo("DB creation unsuccessful");
+	echo("DB creation unsuccessful <br>");
 }
 
-
-// Create a new table
-$sql="CREATE TABLE `mytable` ( `id` INT(6) NOT NULL AUTO_INCREMENT , `name` VARCHAR(10) NOT NULL , PRIMARY KEY (`id`))";
-$result=mysqli_query($conn,$sql);
+// ===================================Create a new table===================================
+$query="CREATE TABLE `mytable` ( `id` INT(6) NOT NULL AUTO_INCREMENT , `name` VARCHAR(20) NOT NULL , PRIMARY KEY (`id`))";
+$result=mysqli_query($conn,$query);
 if($result){
-	echo("Table insert successful");
+	echo("Table creation successful <br>");
 }
 else{
-	echo("Error");
+	echo("Table creation unsuccessful <br>");
 }
 
-
-//Insert data
-$id="2";
+// ===================================Insert data===================================
+$id="3";
 $name="Atanu";
-// $sql="INSERT INTO `mytable` (`id`, `name`) VALUES (NULL, 'Atanu')";
-$sql="INSERT INTO `mytable` (`id`, `name`) VALUES ('$id', '$name')";
-$result=mysqli_query($conn,$sql);
+// $query="INSERT INTO `mytable` (`id`, `name`) VALUES (NULL, 'Atanu')";
+$query="INSERT INTO `mytable` (`id`, `name`) VALUES ('$id', '$name')";
+$result=mysqli_query($conn,$query);
 if(!$result){
-	echo("Insertion failed");
+	echo("Data insertion unsuccessful <br>");
 }
 else{
-	echo("Data insertion successful");
+	echo("Data insertion successful <br>");
 }
 
-
-//Show data
-// $sql="select * from `mytable`";
-$sql="select * from `mytable` where `id`=2";
-
-$result=mysqli_query($conn,$sql);
+// ===================================Show data===================================
+// $query="select * from `mytable`";
+$query="select * from `mytable` where `id`=2";
+$result=mysqli_query($conn,$query);
 $num=mysqli_num_rows($result);
 while($rows=mysqli_fetch_assoc($result)){
 	// echo var_dump($rows);
-	echo "ID is ".$rows['id']." and name is ".$rows['name'];	
+	echo "ID is ".$rows['id']." and name is ".$rows['name']."<br>";	
 }
 
-
-//Update data
-$sql="UPDATE `mytable` SET `name` = 'Atanu Mondal' WHERE `mytable`.`id` = 2";
-$result=mysqli_query($conn,$sql);
+// ===================================Update data===================================
+$query="UPDATE `mytable` SET `name` = 'Atanu Mondal' WHERE `mytable`.`id` = 2";
+$result=mysqli_query($conn,$query);
 if($result){
-	echo("Update successful");
+	echo("Update successful <br>");
 }
 else{
-	echo("Update unsuccessful");
+	echo("Update unsuccessful <br>");
 }
 $affected=mysqli_affected_rows($conn);//To display how many rows are affected after running the query.
-echo("<br>Number of affected rows ".$affected);
+echo("Number of affected rows ".$affected."<br>");
 
+// ===================================Show data===================================
+// $query="select * from `mytable`";
+$query="select * from `mytable` where `id`=2";
+$result=mysqli_query($conn,$query);
+$num=mysqli_num_rows($result);
+while($rows=mysqli_fetch_assoc($result)){
+	// echo var_dump($rows);
+	echo "ID is ".$rows['id']." and name is ".$rows['name']."<br>";	
+}
 
-//Delete data
-$sql="DELETE FROM `mytable` WHERE `mytable`.`id` = 2";
-//$sql="DELETE FROM `mytable` WHERE `mytable`.`id` = 2 LIMIT 3";//Limited the affected rows
-$result=mysqli_query($conn,$sql);
+// ===================================Delete data===================================
+$query="DELETE FROM `mytable` WHERE `mytable`.`id` = 1";
+//$query="DELETE FROM `mytable` WHERE `mytable`.`id` = 2 LIMIT 3";//Limited the affected rows
+$result=mysqli_query($conn,$query);
 if($result){
-	echo("Delete successful");
+	echo("Delete successful <br>");
 }
 else{
-	echo("Delete unsuccessful");
+	echo("Delete unsuccessful <br>");
 }
 $affected=mysqli_affected_rows($conn);//To display how many rows are affected after running the query.
-echo("<br>Number of affected rows ".$affected);
-
-
- ?>
+echo("Number of affected rows ".$affected);
+// ?>

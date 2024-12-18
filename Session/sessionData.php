@@ -4,6 +4,6 @@ if(isset($_SESSION['user'])){
 	echo("Welcome ".$_SESSION['user']);
 }
 else{
-	echo("Not logged in. Log in to continue");
+	echo("User not logged in. Log in to continue");
 }
 ?>

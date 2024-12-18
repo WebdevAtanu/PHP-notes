@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Document</title>
+	<title>PHP</title>
 </head>
 <body>
-	<h1><center>This is a PHP cheat sheet</center></h1>
+	<h1><center>PHP cheat sheet</center></h1>
 	<?php
 	$num1=40;
 	$num2=20;
@@ -17,7 +17,7 @@
 	echo "<br>";
 	echo "<br>";
 	
-	//arithmetic operators
+	// =========================================arithmetic operators=========================================
 	echo("The addition of the numbers are: ");
 	echo $num1+$num2;
 	echo "<br>";
@@ -32,7 +32,7 @@
 	echo "<br>";
 	echo "<br>";
 	
-	//assignment operators
+	// =========================================assignment=========================================
 	$newNum=$num1;
 	echo("the value of newNum is: ");
 	echo $newNum;
@@ -43,7 +43,7 @@
 	echo "<br>";
 	echo "<br>";
 	
-	//comparison operators
+	// =========================================comparison operators=========================================
 	echo var_dump(1==4);//it returns true or false
 	echo "<br>";
 	echo var_dump(1>=4);
@@ -54,7 +54,7 @@
 	echo "<br>";
 	echo "<br>";
 	
-	//increment and decrement operator
+	// =====================================increment and decrement operator=====================================
 	$inc=5;
 	$dec=5;
 	$inc++;
@@ -67,7 +67,7 @@
 	echo "<br>";
 	echo "<br>";
 	
-	//logical operator
+	// =========================================logical operator=========================================
 	$log=(true && true);
 	var_dump($log);
 	echo "<br>";
@@ -82,7 +82,7 @@
 	echo "<br>";
 	echo "<br>";
 	
-	//datatypes
+	// =========================================datatypes=========================================
 	$str="this is a string";
 	var_dump($str);
 	echo "<br>";
@@ -97,7 +97,7 @@
 	echo "<br>";
 	echo "<br>";
 	
-	//if-else
+	// =========================================if-else=========================================
 	$age=62;
 	if($age>=18&&$age<60)
 	{
@@ -113,7 +113,7 @@
 	echo "<br>";
 	echo "<br>";
 	
-	//array
+	// =========================================array=========================================
 	$lang=array("java","php","javascript","python");
 	echo count($lang);
 	echo "<br>";
@@ -121,7 +121,7 @@
 	echo "<br>";
 	echo "<br>";
 	
-	//while loop
+	// =========================================while loop=========================================
 	$a=0;
 	while($a<count($lang))
 	{
@@ -131,7 +131,7 @@
 	}
 	echo "<br>";
 	
-	//for loop
+	// =========================================for loop=========================================
 	for($b=0;$b<4;$b++)
 	{
 	echo $lang[$b];
@@ -140,7 +140,7 @@
 	echo "<br>";
 	echo "<br>";
 	
-	//foreach loop
+	// =========================================foreach loop=========================================
 	foreach($lang as $val)
 	{
 	echo("the valus are: ");
@@ -149,7 +149,7 @@
 	}
 	echo "<br>";
 	
-	//function
+	// =========================================function=========================================
 	function print_name($name)
 	{
 	echo("Hello, ");
@@ -168,7 +168,7 @@
 	echo"<br>";
 	echo"<br>";
 	
-	//string
+	// =========================================string=========================================
 	$str1="this is a string";
 	echo $str1;
 	echo"<br>";
@@ -181,12 +181,12 @@
 	echo"<br>";
 	echo("the replacement of this to that in string is- ".str_replace("this","that",$str1));
 
-	// Associative array
+	// =========================================Associative array=========================================
 	$assoarray=["a"=>"red", "b"=>"green", "c"=>"blue"];
 	echo $assoarray["a"];
 	echo"<br>";
 
-	// Multidimensional array
+	// =========================================Multidimensional array=========================================
 	$mularray= array(
 		array(1,2,3),
 		array(4,5,6),
